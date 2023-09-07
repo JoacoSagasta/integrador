@@ -12,21 +12,32 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-/* ------------------------------------ */
-/* HEADER */
-/* ------------------------------------ */
+/* ------------------------------------- */
+/* HEADER                                */
+/* ------------------------------------- */
 .main-header {
   display: flex;
   flex-direction: column;
+}
+@media (max-width: 768px) {
+  .main-header {
+    flex-direction: column-reverse;
+  }
 }
 
 #menu {
   display: none;
 }
+#menu:checked + .nav-bar {
+  display: block;
+}
+#menu:checked ~ .search-bar .menu-toogle__label {
+  background-color: yellow;
+}
 
-/* ------------------------------------ */
-/* NAVBAR */
-/* ------------------------------------ */
+/* ------------------------------------- */
+/* NAVBAR                                */
+/* ------------------------------------- */
 .nav-bar {
   background-color: mediumaquamarine;
 }
@@ -34,6 +45,11 @@ body {
   display: flex;
   list-style-type: none;
   justify-content: center;
+}
+@media (max-width: 768px) {
+  .nav-bar__nav-list {
+    flex-direction: column;
+  }
 }
 .nav-bar__nav-item {
   text-align: center;
@@ -44,12 +60,17 @@ body {
   background-color: purple;
   color: #fff;
   padding: 1em 2em;
-  text-align: none;
+  text-decoration: none;
+}
+@media (max-width: 768px) {
+  .nav-bar {
+    display: none;
+  }
 }
 
-/* ------------------------------------ */
-/* SEARCH BAR */
-/* ------------------------------------ */
+/* ------------------------------------- */
+/* SEARCH BAR                            */
+/* ------------------------------------- */
 .search-bar {
   background-color: olivedrab;
   display: flex;
@@ -79,13 +100,49 @@ body {
   color: white;
 }
 .search-bar__carrito-container {
-  flex: 0 0 3em; /* Shorthand (grow/shrink/basis) */
+  flex: 0 0 3em; /* shorthand (grow shrink basis */
   background-color: goldenrod;
 }
 
-/* ------------------------------------ */
-/* MENU TOOGLE */
-/* ------------------------------------ */
+/* ------------------------------------- */
+/* MENU TOOGLE                           */
+/* ------------------------------------- */
+.menu-toggle {
+  display: none;
+  background-color: red;
+  flex: 0 0 3em;
+  position: relative;
+  cursor: pointer;
+}
+.menu-toggle__label {
+  display: block;
+  background-color: black;
+  height: 100%;
+}
+.menu-toggle__top-bread, .menu-toggle__meat, .menu-toggle__bottom-bread {
+  display: block;
+  background-color: #333;
+  height: 0.2em;
+  position: absolute;
+  left: 0.5em;
+  right: 0.5em;
+}
+.menu-toggle__top-bread {
+  top: 0.8em;
+}
+.menu-toggle__meat {
+  top: 50%;
+  margin-top: -0.1em;
+}
+.menu-toggle__bottom-bread {
+  bottom: 0.8em;
+}
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+}
+
 .section-cards {
   background-color: #f1f2f3;
   padding: 1em;
