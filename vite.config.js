@@ -10,8 +10,9 @@ export default{
     css: {
         devSourcemap: true
     },
+
     build: {
-        emptyOutDir: true,
+        emtyOutDir: true,
         rollupOptions: {
             input: {
                 alta: resolve('views/alta.html'),
