@@ -18,7 +18,7 @@ export default{
                 carrito: resolve('views/carrito.html'),
                 contacto: resolve('views/contacto.html'),
                 nosotros: resolve('views/nosotros.html'),
-                inicio: resolve('views/index.html')
+                inicio: resolve('index.html')
             }
         }
     }
