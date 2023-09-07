@@ -212,4 +212,29 @@ body {
 }
 .card__content {
   padding: 1em;
+}
+@media (min-width: 1024px) {
+  .card {
+    min-width: 240px;
+  }
+}
+@media (min-width: 426px) and (max-width: 768px) {
+  .card {
+    min-width: 400px;
+    max-width: 500px;
+    height: 200px;
+  }
+  .card__article {
+    display: flex;
+  }
+  .card .card__image-container {
+    width: 40%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 0% 100%);
+  }
+  .card:hover .card__image-container, .card:focus .card_image-container {
+    width: 40%;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
 }/*# sourceMappingURL=main.css.map */
